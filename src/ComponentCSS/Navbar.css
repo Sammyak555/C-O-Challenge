@@ -1,0 +1,12 @@
+.navbar{
+    background-color: #ebeaea;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 45px 20px 45px;
+}
+.navlinks{
+    /* border: 1px solid red; */
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+}

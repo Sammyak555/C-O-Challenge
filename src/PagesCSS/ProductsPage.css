@@ -1,0 +1,28 @@
+.Productpage{
+    border: 1px solid grey;
+    width: 90%;
+    margin: auto;
+}
+.alldata{
+    border: 1px solid red;
+    display: flex;
+}
+.searchbox{
+    margin-top: 20px;
+}
+.searchbox>input{
+    width: 220px;
+}
+.alldata>div:nth-child(1){
+    border: 1px solid grey;
+    width: 23%;
+    margin: 1.5%;
+}
+.alldata>div:nth-child(2){
+    border: 1px solid pink;
+    width: 75%;
+    margin: 1.5%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}

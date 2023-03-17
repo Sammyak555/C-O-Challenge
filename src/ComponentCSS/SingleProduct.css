@@ -1,0 +1,26 @@
+.singleProduct{
+    border: 1px solid red;
+    display: block;
+    height: 300px;
+}
+
+.imgdiv>img{
+    width: 90%;
+    height: 160px;
+}
+.pricebutton{
+    display: flex;
+    border: 1px solid red;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+    height: 20%;
+}
+button{
+    height: 23px;
+    /* border-radius: 0%; */
+    border-color: grey;
+    background-color: grey;
+    color: white;
+}
