@@ -1,9 +1,7 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SingleProduct from '../Components/SingleProduct'
 import "../PagesCSS/ProductsPage.css"
-
-//https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json
 
 const getData = (setData) => {
     return axios.get('https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json')
@@ -13,6 +11,7 @@ const getData = (setData) => {
 const ProductsPage = () => {
     const [data, setData] = useState([])
     const [toggle,setToggle] = useState(false)
+    
     var checkdata = ([])
 
     useEffect(() => {
