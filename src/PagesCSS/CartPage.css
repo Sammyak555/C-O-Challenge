@@ -12,3 +12,16 @@
     justify-content: space-evenly;
     align-items: center;
 }
+.borderline{
+    border: 2px solid grey;
+    margin-top: 20px;
+    width: 50%;
+    margin-left: 10%;
+}
+.totalamount{
+    margin-left: 10%;
+    border: 1px solid red;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+}

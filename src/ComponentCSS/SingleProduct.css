@@ -1,7 +1,9 @@
 .singleProduct{
-    border: 1px solid red;
     display: block;
     height: 300px;
+    width: 90%;
+    padding: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .imgdiv>img{
@@ -10,7 +12,7 @@
 }
 .pricebutton{
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     text-align: center;
     align-items: center;
     justify-content: space-between;
@@ -23,4 +25,5 @@ button{
     border-color: grey;
     background-color: grey;
     color: white;
+    margin-left: 6px;
 }

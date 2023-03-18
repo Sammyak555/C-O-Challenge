@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import SingleProduct from '../Components/SingleProduct'
 import "../PagesCSS/ProductsPage.css"
+import { BiSearchAlt2 } from 'react-icons/bi';
 
 const getData = (setData) => {
     return axios.get('https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart/catalogue.json')
@@ -11,52 +12,81 @@ const getData = (setData) => {
 const ProductsPage = () => {
     const [data, setData] = useState([])
     const [toggle,setToggle] = useState(false)
-    
-    var checkdata = ([])
+    const [filtdata,setFiltdata] = useState([])
+    let col = []
 
     useEffect(() => {
         getData(setData)
         setToggle(!toggle)
     }, [setData])
+
+    const handleCheckbox =()=>{
+
+    }
     
-    const handleCheckbox = (e) => {
-        let color = data.filter((el) => {
-            if( el.color === e.target.value){
-                checkdata.push(el)
-                setToggle(!toggle)
-            }
-        })
-        
-    console.log(checkdata)
+    const handleColour = (e) => {
+        if(filtdata.length===0){
+            let color = data.filter((el) => {
+                if( el.color === e.target.value){         
+                    return el
+                }
+            })
+            setFiltdata([...filtdata,...color])
+        }else{
+            let color = filtdata.filter((el) => {
+                if( el.color === e.target.value){         
+                    return el
+                }
+            })
+            setFiltdata(color)
+        }
     }
 
-    // console.log(data)
+    const handleGender = (e) => {
+        if(filtdata.length===0){
+            let gender = data.filter((el) => {
+                if( el.gender === e.target.value){         
+                    return el
+                }
+            })
+            setFiltdata(gender) 
+        }else{
+            let gender = filtdata.filter((el) => {
+                if( el.gender === e.target.value){         
+                    return el
+                }
+            })
+            setFiltdata(gender) 
+        }
+    } 
+
+    console.log(filtdata)
     return (
         <div className='Productpage'>
             <div className='searchbox'>
                 <input type="text" name="" id="" placeholder='Search for products...' />
-                <button>search</button>
+                <button><BiSearchAlt2/></button>
             </div>
             <div className='alldata'>
                 <div className='filterbox'>
                     <div><h4>Colour</h4>
                         <div>
                             <input type="checkbox" value="Red"
-                                onChange={handleCheckbox}
+                                onChange={handleColour}
                                 // checked={title.includes("Red")}
                             />
                             <label>Red</label>
                         </div>
                         <div>
                             <input type="checkbox" value="Blue"
-                                onChange={handleCheckbox}
+                                onChange={handleColour}
                                 // checked={title.includes("Blue")}
                             />
                             <label>Blue</label>
                         </div>
                         <div>
                             <input type="checkbox" value="Green"
-                                onChange={handleCheckbox}
+                                onChange={handleColour}
                                 // checked={title.includes("Green")}
                             />
                             <label>Green</label>
@@ -66,14 +96,14 @@ const ProductsPage = () => {
                     <div><h4>Gender</h4>
                     <div>
                             <input type="checkbox" value="Men"
-                                onChange={handleCheckbox}
+                                onChange={handleGender}
                                 // checked={title.includes("Men")}
                             />
                             <label>Men</label>
                         </div>
                         <div>
                             <input type="checkbox" value="Women"
-                                onChange={handleCheckbox}
+                                onChange={handleGender}
                                 // checked={title.includes("Women")}
                             />
                             <label>Women</label>
@@ -130,6 +160,10 @@ const ProductsPage = () => {
                 </div>
                 <div>
                     {
+                       filtdata.length>0?filtdata.length>0&&
+                       filtdata.map((el) => {
+                        return <div key={el.id}><SingleProduct {...el} /></div>
+                       }):
                        data.length > 0 &&
                         data.map((el) => {
                             return <div key={el.id}><SingleProduct {...el} /></div>

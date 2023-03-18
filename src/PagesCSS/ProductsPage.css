@@ -15,7 +15,7 @@
 }
 
 .filterbox{
-    border: 1px solid grey;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 19%;
     margin: 1.5%;
     height: fit-content;
