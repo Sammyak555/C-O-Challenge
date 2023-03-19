@@ -4,7 +4,7 @@ import { CartContext } from '../CartContext/CartContextProvider'
 import { addtowish } from '../CartContext/action'
 
 const SingleProduct = (el) => {
-  const { state, dispatch } = useContext(CartContext)
+  const { dispatch } = useContext(CartContext)
 
   return (
     <div className='singleProduct'>

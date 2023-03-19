@@ -31,7 +31,6 @@ const ProductsPage = () => {
     const [data, setData] = useState([])
     const [filtdata, setFiltdata] = useState([])
     const [search, setSearch] = useState('')
-    const [sty, setSty] = useState('')
 
     useEffect(() => {
         getData(setData)
@@ -106,9 +105,6 @@ const ProductsPage = () => {
 
 
     }
-    const handleFilter = () => {
-        setSty('change')
-    }
 
 
     const openModal = () => {
@@ -129,7 +125,7 @@ const ProductsPage = () => {
             <div className='searchbox'>
                 <input type="text" value={search} placeholder='Search for products...' onChange={handlesearchchange} />
                 <button onClick={handleSearch}><BiSearchAlt2 /></button>
-                <button className='filterButton' onClick={() => { handleFilter(); openModal() }}><CiFilter size={"14"} /></button>
+                <button className='filterButton' onClick={openModal}><CiFilter size={"14"} /></button>
                 <Modal
                     isOpen={modalIsOpen}
                     onAfterOpen={afterOpenModal}

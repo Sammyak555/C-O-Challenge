@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { removewish } from '../CartContext/action'
 import { CartContext } from '../CartContext/CartContextProvider'
 import SingleItem from '../Components/SingleItem'
 import "../PagesCSS/CartPage.css"
 
 const CartPage = () => {
-  const { state, dispatch } = useContext(CartContext)
+  const { state } = useContext(CartContext)
   const [total, setTotal] = useState(0)
 
   useEffect(() => {

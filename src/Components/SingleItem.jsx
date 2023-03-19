@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { removewish } from '../CartContext/action'
 import { CartContext } from '../CartContext/CartContextProvider'
 
 
 const SingleItem = ({ el, setTotal, total }) => {
-    const { state, dispatch } = useContext(CartContext)
+    const { dispatch } = useContext(CartContext)
     const [val, setval] = useState(1)
 
     const incval = () => {
