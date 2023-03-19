@@ -13,6 +13,7 @@ const ProductsPage = () => {
     const [data, setData] = useState([])
     const [toggle,setToggle] = useState(false)
     const [filtdata,setFiltdata] = useState([])
+    const [search,setSearch] = useState('')
     let col = []
 
     useEffect(() => {
@@ -20,7 +21,7 @@ const ProductsPage = () => {
         setToggle(!toggle)
     }, [setData])
 
-    
+  //Filterting--------------------------------------  
     
     const handleColour = (e) => {
             let color = data.filter((el) => {
@@ -74,13 +75,28 @@ const ProductsPage = () => {
         })
         setFiltdata([...filtdata,...type])
     }   
+    //Search Functionality-----------------------------------
+
+    const handlesearchchange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    const handleSearch = () => {
+        console.log(search.toUpperCase())
+            let searchdata = data.filter((el) => {
+                return el.color.toUpperCase()===search.toUpperCase() || el.type.toUpperCase()===search.toUpperCase() || el.gender.toUpperCase()===search.toUpperCase() ||el.name.toUpperCase()===search.toUpperCase()
+            })
+             setFiltdata(searchdata)
+           
+        
+    }
 
     console.log(filtdata)
     return (
         <div className='Productpage'>
             <div className='searchbox'>
-                <input type="text" name="" id="" placeholder='Search for products...' />
-                <button><BiSearchAlt2/></button>
+                <input type="text" value={search} placeholder='Search for products...' onChange={handlesearchchange}/>
+                <button onClick={handleSearch}><BiSearchAlt2/></button>
             </div>
             <div className='alldata'>
                 <div className='filterbox'>
