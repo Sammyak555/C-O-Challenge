@@ -1,10 +1,10 @@
 .Productpage{
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     width: 90%;
     margin: auto;
 }
 .alldata{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
 }
 .searchbox{
@@ -27,7 +27,7 @@
     visibility: hidden;
 }
 .alldata>div:nth-child(2){
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     width: 75%;
     margin: 1.5%;
     display: grid;
