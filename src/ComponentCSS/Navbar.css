@@ -2,11 +2,64 @@
     background-color: #ebeaea;
     display: flex;
     justify-content: space-between;
-    padding: 20px 45px 20px 45px;
+    padding: 30px 45px 10px 45px;
 }
 .navlinks{
     /* border: 1px solid red; */
     width: 25%;
     display: flex;
     justify-content: space-evenly;
+}
+.carticon{
+    width: 30%;
+    display: flex;
+    /* border: 1px solid red; */
+}
+.carticon>p{
+    border: 1px solid red;
+    background-color: rgb(255, 166, 0);
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    position: relative;
+    left: 0px;
+    top: -24px;
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 600px) {
+
+}
+
+
+@media only screen and (max-width: 426px) {
+    .navbar{
+        background-color: #ebeaea;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 35px 10px 35px;
+    } 
+    .carticon>p{
+        border: 1px solid red;
+        background-color: rgb(255, 166, 0);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        position: relative;
+        left: 0px;
+        top: -24px;
+        font-size: 13px;
+    }
+    .navlinks{
+        /* border: 1px solid red; */
+        width: 35%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .carticon{
+        width: 30%;
+        display: flex;
+        /* border: 1px solid red; */
+    }
+    
 }
