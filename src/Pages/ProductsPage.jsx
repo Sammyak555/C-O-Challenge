@@ -20,26 +20,16 @@ const ProductsPage = () => {
         setToggle(!toggle)
     }, [setData])
 
-    const handleCheckbox =()=>{
-
-    }
+    
     
     const handleColour = (e) => {
-        if(filtdata.length===0){
             let color = data.filter((el) => {
                 if( el.color === e.target.value){         
                     return el
                 }
             })
             setFiltdata([...filtdata,...color])
-        }else{
-            let color = filtdata.filter((el) => {
-                if( el.color === e.target.value){         
-                    return el
-                }
-            })
-            setFiltdata(color)
-        }
+     
     }
 
     const handleGender = (e) => {
@@ -59,6 +49,31 @@ const ProductsPage = () => {
             setFiltdata(gender) 
         }
     } 
+    const handlePrice =(e)=>{
+        if(filtdata.length===0){
+            let gender = data.filter((el) => {
+                if( el.price <= e.target.value){         
+                    return el
+                }
+            })
+            setFiltdata(gender) 
+        }else{
+            let gender = filtdata.filter((el) => {
+                if( el.price <= e.target.value){         
+                    return el
+                }
+            })
+            setFiltdata(gender) 
+        }
+    }
+    const handleCheckbox =(e)=>{
+        let type = data.filter((el) => {
+            if( el.type === e.target.value){         
+                return el
+            }
+        })
+        setFiltdata([...filtdata,...type])
+    }   
 
     console.log(filtdata)
     return (
@@ -112,22 +127,22 @@ const ProductsPage = () => {
                     <br />
                     <div><h4>Price</h4>
                     <div>
-                            <input type="checkbox" value="Red"
-                                onChange={handleCheckbox}
+                            <input type="checkbox" value="250"
+                                onChange={handlePrice}
                                 // checked={title.includes("Red")}
                             />
                             <label>0-Rs.250</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Red"
-                                onChange={handleCheckbox}
+                            <input type="checkbox" value="450"
+                                onChange={handlePrice}
                                 // checked={title.includes("Red")}
                             />
                             <label>Rs.251-Rs.450</label>
                         </div>
                         <div>
-                            <input type="checkbox" value="Red"
-                                onChange={handleCheckbox}
+                            <input type="checkbox" value="451"
+                                onChange={handlePrice}
                                 // checked={title.includes("Red")}
                             />
                             <label>Rs.450</label>
